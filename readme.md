@@ -61,67 +61,11 @@ The approach used to partition the data into training/dev/testing folds is a ran
 Each fold (train, dev, test) has a number of files in it. Each of those files
 contains csv on each line, which has the following fields:
 
-```
-sequence: HWLQMRDSMNTYNNMVNRCFATCIRSFQEKKVNAEEMDCTKRCVTKFVGYSQRVALRFAE
-family_accession: PF02953.15
-sequence_name: C5K6N5_PERM5/28-87
-aligned_sequence: ....HWLQMRDSMNTYNNMVNRCFATCI...........RS.F....QEKKVNAEE.....MDCT....KRCVTKFVGYSQRVALRFAE
-family_id: zf-Tim10_DDP
-```
-
-Description of fields:
-- sequence: These are usually the input features to your model. Amino acid sequence for this domain.
-  There are 20 very common amino acids (frequency > 1,000,000), and 4 amino acids that are quite 
-  uncommon: X, U, B, O, Z.
-- family_accession: These are usually the labels for your model. Accession number in form PFxxxxx.y 
-  (Pfam), where xxxxx is the family accession, and y is the version number. 
-  Some values of y are greater than ten, and so 'y' has two digits.
-- family_id: One word name for family.
-- sequence_name: Sequence name, in the form "$uniprot_accession_id/$start_index-$end_index".
-- aligned_sequence: Contains a single sequence from the multiple sequence alignment (with the rest of the members of 
-  the family in seed, with gaps retained.
-
-Generally, the `family_accession` field is the label, and the sequence
-(or aligned sequence) is the training feature.
-
-This sequence corresponds to a _domain_, not a full protein.
-
-The contents of these fields is the same as to the data provided in Stockholm
-format by PFam at
-ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam32.0/Pfam-A.seed.gz
 
 
-[1] Eddy, Sean R. "Accelerated profile HMM searches." 
-    PLoS computational biology 7.10 (2011): e1002195.
 
-## License
 
-Creative Commons Legal Code
 
-CC0 1.0 Universal
-
-    CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE
-    LEGAL SERVICES. DISTRIBUTION OF THIS DOCUMENT DOES NOT CREATE AN
-    ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS
-    INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES
-    REGARDING THE USE OF THIS DOCUMENT OR THE INFORMATION OR WORKS
-    PROVIDED HEREUNDER, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM
-    THE USE OF THIS DOCUMENT OR THE INFORMATION OR WORKS PROVIDED
-    HEREUNDER.
-
-Statement of Purpose
-
-The laws of most jurisdictions throughout the world automatically confer
-exclusive Copyright and Related Rights (defined below) upon the creator
-and subsequent owner(s) (each and all, an "owner") of an original work of
-authorship and/or a database (each, a "Work").
-
-Certain owners wish to permanently relinquish those rights to a Work for
-the purpose of contributing to a commons of creative, cultural and
-scientific works ("Commons") that the public can reliably and without fear
-of later claims of infringement build upon, modify, incorporate in other
-works, reuse and redistribute as freely as possible in any form whatsoever
-and for any purposes, including without limitation commercial purposes.
 These owners may contribute to the Commons to promote the ideal of a free
 culture and the further production of creative, cultural and scientific
 works, or to gain reputation or greater distribution for their Work in

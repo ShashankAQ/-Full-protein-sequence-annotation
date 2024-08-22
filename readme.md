@@ -57,9 +57,6 @@ The approach used to partition the data into training/dev/testing folds is a ran
   helps avoid overfitting on your test data, as it should only be used
   infrequently.
 
-### File content
-Each fold (train, dev, test) has a number of files in it. Each of those files
-contains csv on each line, which has the following fields:
 
 
 

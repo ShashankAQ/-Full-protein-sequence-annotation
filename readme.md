@@ -66,7 +66,3 @@ contains csv on each line, which has the following fields:
 
 
 
-These owners may contribute to the Commons to promote the ideal of a free
-culture and the further production of creative, cultural and scientific
-works, or to gain reputation or greater distribution for their Work in
-part through the use and efforts of others.
